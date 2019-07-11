@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite">
+	<listeners>
+		<listener class-name="com.plutora.utils.Listener"></listener>
+		<!-- <listener class-name="com.plutora.utils.AnnotationTransformer"></listener> -->
+	</listeners>
+
+	<parameter name="testDataFile" value="testData.properties" />
+	<parameter name="objectMapFile" value="objectMap.properties" />
+	<parameter name="loginFile" value="login.properties" />
+	<parameter name="requirementsFile" value="requirementsMap.properties" />
+	<parameter name="testPlanFile" value="testPlanMap.properties" />
+	<parameter name="testDesignerFile" value="testDesignerMap.properties" />
+	<parameter name="testExecutionFile" value="testExecutionMap.properties" />
+	<parameter name="defectsFile" value="defectsMap.properties" />
+	<parameter name="userManagementFile" value="userManagementMap.properties" />
+	<parameter name="requirementsBulkUploadFile" value="RequirementsBulkUploadMap.properties" />
+	<parameter name="settingsFile" value="settingMap.properties" />
+	<parameter name="pageLoadTimeOutInSec" value="60" />
+	<parameter name="implicitWaitInSec" value="60" />
+	<parameter name="hubUrl" value="http://192.168.2.35:5587/wd/hub" />
+	
+	<parameter name="browser" value="CHROME" />
+	<parameter name="platform" value="Windows" />
+	<parameter name="url" value="https://demo.plutoratest.org/login" />
+	<parameter name="domain" value="Demo-PlutoraTest" />
+	<parameter name="username" value="abhisheka.katpalli@plutora.com"/>
+	<parameter name="password" value="password123" />
+	<parameter name="chromedriverPath" value="C:\drivers\chromedriver.exe"/>
+	
+	<!-- <parameter name="browser" value="${WebBrowser}" /> 
+	<parameter name="platform" value="${Platform}" />
+	<parameter name="url" value="${URL}" />
+	<parameter name="domain" value="${Domain}" />
+	<parameter name="username" value="${Username}"/>
+	<parameter name="password" value="${Password}" />
+	<parameter name="chromedriverPath" value="${Browser Driver}" /> -->
+
+	<test name="Login to PlutoraTest">
+		<classes>
+			<class name="com.plutora.testconfig.PlutoraTestConfiguration" />
+			<class name="com.plutoratest.testplan.Login" />
+		</classes>
+	</test>
+	
+	<!--<test name="PlutoraBulkUpload">
+		<classes>
+			<class name="com.plutoratest.testplan.RequirementsBulkUpload"/>
+		</classes>
+	</test> 
+	<test name="Requirements Activity History">
+		<classes>
+			<class name="com.plutoratest.testplan.RequirementsActivityHistory" />
+		</classes>
+		</test> -->
+	 <!-- <test name="Requirements Tracebility Matrix">
+		<classes>
+			<class name="com.plutoratest.testplan.RequirementsTraceabilityMatrix" />
+		</classes>
+	</test>  -->
+	<!-- <test name="Requirements Folder">
+		<classes>
+			<class name="com.plutoratest.testplan.RequirementsFolderAdd" />
+		</classes>
+	</test> 
+	<test name="Requirements Search Association">
+		<classes>
+			<class name="com.plutoratest.testplan.RequirementSearchAssociation"/>
+		</classes>
+	</test>
+	<test name="Requirements  ">
+		<classes>
+			<class name="com.plutoratest.testplan.RequirementsImportFolderDestination">
+		</classes>
+	</test> -->
+	
+	<!-- <test name="Requirements  ">
+		<classes>
+			<class name="com.plutoratest.testplan.RequirementsTestcaseAssociation"/>
+		</classes>
+	</test> -->
+	<test name="Defect Create Association">
+		<classes>
+			<class name="com.plutoratest.testplan.DefectAssociations" >
+			<methods><include name="associateDefectToOtherDefect"/></methods>
+			</class>
+		</classes>
+	</test>
+   <!-- <test name="SmokePlutoraTest">
+       <groups>
+		<define name="All">
+			<include name="SmokeTests" />
+			<include name="RegressionTests" />
+		</define>
+		<run>
+			<include name="All" />
+		</run>
+	</groups>
+		<classes>
+			<class name="com.plutoratest.testplan.SmokePlutoraTest" />
+		</classes>
+		
+	</test> -->
+	<test name="LogoutPlutoraTest">
+		<classes>
+			<class name="com.plutoratest.testplan.Logout" />
+		</classes>
+	</test>
+
+</suite> <!-- Suite -->
+

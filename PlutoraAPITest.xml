@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite">
+	<listeners>
+		<listener class-name="com.plutora.utils.APIListener"></listener>
+		<listener class-name="com.plutora.utils.AnnotationTransformer"></listener>
+	</listeners>
+
+	<parameter name="apitestDataFile" value="apiTestData.properties" />
+	<parameter name="domain" value="PlutoraAPI" />
+	<test name="Authorization">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutora.testconfig.PlutoraAPIConfiguration" />
+			<class name="com.plutoraapi.testplan.Authorization" />
+		</classes>
+	</test>
+	<test name="Releases">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.testplan.Releases" />
+		</classes>
+	</test>
+	 <test name="TECR">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.testplan.TECR" />
+		</classes>
+	</test>
+	<test name="TEBR">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.testplan.TEBR" />
+		</classes>
+	</test>
+	<test name="Systems">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.testplan.Systems" />
+		</classes>
+	</test>
+	<test name="Changes">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.testplan.Changes" />
+		</classes>
+	</test>
+	<test name="Environment">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.testplan.Environment" />
+		</classes>
+	</test>
+	<test name="EnvironmentGroups">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.testplan.EnvironmentGroups" />
+		</classes>
+	</test>
+	<test name="Users">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.testplan.Users" />
+		</classes>
+	</test>
+	<test name="Hosts">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.testplan.Hosts" />
+		</classes>
+	</test>
+	<test name="Layers">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.testplan.Layers" />
+		</classes>
+	</test>
+	<test name="LookupFields">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.testplan.LookupFields" />
+		</classes>
+	</test>
+	<test name="UserPreferences">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.testplan.UserPreferences" />
+		</classes>
+	</test>
+	<test name="UserGroups">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.testplan.UserGroups" />
+		</classes>
+	</test> 
+</suite> <!-- Suite -->
+

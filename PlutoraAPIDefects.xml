@@ -1,0 +1,997 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite">
+	<listeners>
+		<listener class-name="com.plutora.utils.APIListener"></listener>
+		<listener class-name="com.plutora.utils.AnnotationTransformer"></listener>
+	</listeners>
+
+	<parameter name="apitestDataFile" value="apiTestData.properties" />
+	<parameter name="domain" value="PlutoraAPI" />
+	<test name="Authorization">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutora.testconfig.PlutoraAPIConfiguration" />
+			<class name="com.plutoraapi.testplan.Authorization" />
+		</classes>
+	</test>
+   <test name="Environment">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.Environment" />
+		</classes>
+	</test>
+ 	<test name="Systems">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.Systems" />
+		</classes>
+	</test> 
+  <test name="ReleasesCriteria">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.ReleasesActivityCriteria" />
+		</classes>
+	</test>  
+  <test name="TEBR">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.TEBR" />
+		</classes>
+	</test> 
+	<test name="TECR">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.TECR" />
+		</classes>
+	</test> 
+  <test name="TEBRTECRLastModifiedDate">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.TEBRTECRLastModifiedDate" />
+		</classes>
+	</test> 
+ <test name="Layers">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.Layers" />
+		</classes>
+	</test> 
+	<test name="Hosts">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.Hosts" />
+		</classes>
+	</test> 
+  <test name="EnvironmentGroups">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.EnvironmentGroups" />
+		</classes>
+	</test> 
+  <test name="Connectivity">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.Connectivity" />
+		</classes>
+	</test>  
+  	<test name="Changes">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.Changes" />
+		</classes>
+	</test>  
+    <test name="Releases">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.Releases" />
+		</classes>
+     </test> 
+    <test name="Users">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.Users" />
+		</classes>
+	</test>
+	 
+   <test name="API-R-4343Releases-4445">
+		<groups>
+			<define name="All">
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.ReleasesFilter" />
+		</classes>
+	</test> 
+  <test name="API-R-4343TEBRs">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.TEBRFilter" />
+		</classes>
+	</test> 
+	<test name="API-R-4343TECRs">
+		<groups>
+			<define name="All">
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.TECRFilter" />
+		</classes>
+	</test>  
+   <test name="API-R-4343Changes">
+		<groups>
+			<define name="All">
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.ChangesFilter" />
+		</classes>
+	</test>  
+  <test name="Schemas">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.Schema" />
+		</classes>
+	</test> 
+  <test name="TestCase4343-TestPlanSearch">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.TestPlanSearch" />
+		</classes>
+	</test>
+ <test name="TestCase4343-RequirementsSearch">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+			<classes>
+			<class name="com.plutoraapi.defects.RequirementSearch" />
+		</classes>
+	</test>
+<test name="TestCase4343-TestCaseSearch">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.TestCaseSearch" />
+		</classes>
+	</test>
+	<test name="TestCase4343-DefectsSearch">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.DefectsSearch" />
+		</classes>
+	</test>
+	<test name="ReleasesAdditionalInformation">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.ReleasesAdditionalInformation" />
+		</classes>
+	</test>
+
+  <test name="ReleasesFilterEO">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.ReleasesFilterEO" />
+		</classes>
+	</test>
+	<test name="TEBRFilterEO">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.TEBRFilterEO" />
+		</classes>
+	</test>
+	<test name="TECRFilterEO">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.TECRFilterEO" />
+		</classes>
+	</test>
+	<test name="ChangesFilterEO">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.ChangesFilterEO" />
+		</classes>
+	</test>
+	
+	<test name="CategorySettingsEOSearch">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.CategorySettingsEO" />
+		</classes>
+	</test> 
+  <test name="DefectsEOSearch">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.DefectsSearchEO" />
+		</classes>
+	</test>
+ <test name="DefectsBulkUpdateEOSearch">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.DefectsBulkUpdateSearchEO" />
+		</classes>
+	</test>
+	<test name="RequirementEOSearch">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.RequirementSearchEO" />
+		</classes>
+	</test>
+	<test name="RequirementBulkUpdateEOSearch">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.RequirementBulkUpdateSearchEO" />
+		</classes>
+	</test>
+	<test name="TestplanEOSearch">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.TestplanSearchEO" />
+		</classes>
+	</test>
+	<test name="TestcaseEOSearch">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.TestcaseSearchEO" />
+		</classes>
+	</test>
+	<test name="TestcaseEOExecutionSummarySearch">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.TestcaseExecutionSummarySearchEO" />
+		</classes>
+	</test> 
+	<test name="TestcaseEOBulkUpdateSearch">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.plutoraapi.defects.TestcaseBulkUpdateSearchEO" />
+		</classes>
+	</test> 
+  <test name="Changes pagination and filters">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.ChangesPaginationFilters">
+			</class>
+		</classes>
+	</test>  
+ <test name="Connectivities pagination and filters">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.ConnectivityPaginationFilters">
+			</class>
+		</classes>
+	</test> 
+	<test name="Environment Groups pagination and filters">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.EnvironmentGroupsPaginationFilters">
+			</class>
+		</classes>
+	</test> 
+  <test name="Environments pagination and filters">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.EnvironmentPaginationFilters">
+			</class>
+		</classes>
+	</test> 
+	<test name="Hosts pagination and filters">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.HostPaginationFilters">
+			</class>
+		</classes>
+	</test> 
+	<test name="Organizations pagination and filters">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.OrganizationsPaginationFilters">
+			</class>
+		</classes>
+	</test> 
+ <test name="Systems pagination and filters">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups> 
+		<classes>
+			<class
+				name="com.plutoraapi.defects.SystemsPaginationFilters">
+			</class>
+		</classes>
+	</test> 
+	 <test name="TECR pagination and filters">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.TECRPaginationFilters">
+			</class>
+		</classes>
+	</test> 
+	 <test name="TEBR pagination and filters">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.TEBRPaginationFilter">
+			</class>
+		</classes>
+	</test>
+  <test name="Releases pagination and filters">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.ReleasesPaginationFilters">
+			</class>
+		</classes>
+	</test>
+	<test name="User groups pagination and filters">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.UsersUserGroupsPaginationFilters">
+			</class>
+		</classes>
+	</test> 
+ <test name="Workitem pagination and filters">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.WorkItemNamesPaginationFilters">
+			</class>
+		</classes>
+	</test>
+ <test name="LookUp Fields pagination and filters">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.LookupFieldsPaginationFilters">
+			</class>
+		</classes>
+	</test> 
+	<test name="Users Fields pagination and filters">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.UsersPaginationFilters">
+			</class>
+		</classes>
+	</test> 
+	<test name="Changes Fields pagination and filters with only filter rule">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.ChangesPaginationFiltersWithoutPageNum">
+			</class>
+		</classes>
+	</test>
+	<test name="Connectivity Fields pagination and filters with only filter rule">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.ConnectivityPaginationFiltersWithoutPageNum">
+			</class>
+		</classes>
+	</test>
+	<test name="Environment groups Fields pagination and filters with only filter rule">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.EnvironmentGroupsPaginationFiltersWithoutPageNum">
+			</class>
+		</classes>
+	</test>
+	<test name="Environment Fields pagination and filters with only filter rule">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.EnvironmentPaginationFiltersWithoutPageNum">
+			</class>
+		</classes>
+	</test>
+	<test name="Hosts Fields pagination and filters with only filter rule">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.HostPaginationFiltersWithoutPageNum">
+			</class>
+		</classes>
+	</test>
+	<test name="Lookup Fields pagination and filters with only filter rule">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.LookupFieldsPaginationFiltersWithoutPageNum">
+			</class>
+		</classes>
+	</test>
+	<test name="Organizations Fields pagination and filters with only filter rule">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.OrganizationsPaginationFiltersWithoutPageNum">
+			</class>
+		</classes>
+	</test>
+	<test name="Releases Fields pagination and filters with only filter rule">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.ReleasesPaginationFiltersWithoutPageNum">
+			</class>
+		</classes>
+	</test>
+	<test name="Systems Fields pagination and filters with only filter rule">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.SystemsPaginationFiltersWithoutPageNum">
+			</class>
+		</classes>
+	</test>
+	<test name="TEBR Fields pagination and filters with only filter rule">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.TEBRPaginationFilterWithoutPageNum">
+			</class>
+		</classes>
+	</test>
+	<test name="TECR Fields pagination and filters with only filter rule">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.TECRPaginationFiltersWithoutPageNum">
+			</class>
+		</classes>
+	</test>
+	<test name="Users Fields pagination and filters with only filter rule">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.UsersPaginationFiltersWithoutPageNum">
+			</class>
+		</classes>
+	</test>
+	<test name="UsersUserGroups Fields pagination and filters with only filter rule">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.UsersUserGroupsPaginationFiltersWithoutPageNum">
+			</class>
+		</classes>
+	</test>
+	<test name="WorkItemNames Fields pagination and filters with only filter rule">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.WorkItemNamesPaginationFiltersWithoutPageNum">
+			</class>
+		</classes>
+	</test>  
+	 <test name="Deployment Plan Defects">
+		<groups>
+			<define name="All">
+				<include name="SmokeTests" />
+				<include name="RegressionTests" />
+			</define>
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.plutoraapi.defects.DeploymentPlanDefects">
+			</class>
+		</classes>
+	</test> 
+	
+</suite> <!-- Suite -->
+

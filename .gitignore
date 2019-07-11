@@ -1,0 +1,12 @@
+.classpath
+.metadata/
+.project
+.settings/
+test-output
+.DS_Store
+CompressedExtent*.zip
+RemoteSystemsTempFiles/
+target/
+bin/
+/ExtentReports/
+/ExtentReports_Archive/

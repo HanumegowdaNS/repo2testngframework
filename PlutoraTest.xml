@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite">
+	<listeners>
+		<listener class-name="com.plutora.utils.Listener"></listener>
+		<listener class-name="com.plutora.utils.AnnotationTransformer"></listener>
+	</listeners>
+
+	<parameter name="testDataFile" value="testData.properties" />
+	<parameter name="objectMapFile" value="objectMap.properties" />
+	<parameter name="loginFile" value="login.properties" />
+	<parameter name="requirementsFile" value="requirementsMap.properties" />
+	<parameter name="testPlanFile" value="testPlanMap.properties" />
+	<parameter name="testDesignerFile" value="testDesignerMap.properties" />
+	<parameter name="testExecutionFile" value="testExecutionMap.properties" />
+	<parameter name="defectsFile" value="defectsMap.properties" />
+	<parameter name="userManagementFile" value="userManagementMap.properties" />
+	<parameter name="pageLoadTimeOutInSec" value="30" />
+	<parameter name="implicitWaitInSec" value="30" />
+	<parameter name="hubUrl" value="http://192.168.2.34:5598/wd/hub" />
+	
+	<!-- <parameter name="browser" value="CHROME" />
+	<parameter name="platform" value="Windows" />
+	<parameter name="url" value="https://demops.plutoratest.com" />
+	<parameter name="domain" value="DemoPS-PlutoraTest" />
+	<parameter name="username" value="abhisheka.katpalli@plutora.com"/>
+	<parameter name="password" value="password123" />
+	<parameter name="chromedriverPath" value="D:\AutomationSoftwares\SeleniumJARs\chromedriver.exe"/> -->
+	
+	<parameter name="browser" value="${WebBrowser}" /> 
+	<parameter name="platform" value="${Platform}" />
+	<parameter name="url" value="${URL}" />
+	<parameter name="domain" value="${Domain}" />
+	<parameter name="username" value="${Username}"/>
+	<parameter name="password" value="${Password}" />
+	<parameter name="chromedriverPath" value="${Browser Driver}" />
+
+	<test name="Login to PlutoraTest">
+		<classes>
+			<class name="com.plutora.testconfig.PlutoraTestConfiguration" />
+			<class name="com.plutoratest.testplan.Login" />
+		</classes>
+	</test>
+	<test name="Requirements">
+		<classes>
+			<class name="com.plutoratest.testplan.Requirements" />
+		</classes>
+	</test>
+	<test name="Test Plan">
+		<classes>
+			<class name="com.plutoratest.testplan.TestPlan" />
+		</classes>
+	</test>
+	<test name="Test Designer">
+		<classes>
+			<class name="com.plutoratest.testplan.TestDesigner" />
+		</classes>
+	</test>
+	<test name="Test Execution">
+		<classes>
+			<class name="com.plutoratest.testplan.TestExecutionwithTC" />
+		</classes>
+	</test>
+	<test name="Deleting Test Cases">
+		<classes>
+			<class name="com.plutoratest.testplan.TestCase" />
+		</classes>
+	</test>
+	<test name="Verifing test cases are not displayed">
+		<classes>
+			<class name="com.plutoratest.testplan.TestExecutionwithNoTC" />
+		</classes>
+	</test>
+	<test name="Defects">
+		<classes>
+			<class name="com.plutoratest.testplan.Defects" />
+		</classes>
+	</test>
+	<test name="Test Plan - Duplicating and Deleting">
+		<classes>
+			<class name="com.plutoratest.testplan.TestPlan2" />
+		</classes>
+	</test>
+	<test name="Requirements - Duplicating and Deleting">
+		<classes>
+			<class name="com.plutoratest.testplan.Requirements2" />
+		</classes>
+	</test>
+	<test name="User Management">
+		<classes>
+			<class name="com.plutoratest.testplan.UserManagement" />
+		</classes>
+	</test>
+   <!-- <test name="SmokePlutoraTest">
+       <groups>
+		<define name="All">
+			<include name="SmokeTests" />
+			<include name="RegressionTests" />
+		</define>
+		<run>
+			<include name="All" />
+		</run>
+	</groups>
+		<classes>
+			<class name="com.plutoratest.testplan.SmokePlutoraTest" />
+		</classes>
+		
+	</test> -->
+	<test name="LogoutPlutoraTest">
+		<classes>
+			<class name="com.plutoratest.testplan.Logout" />
+		</classes>
+	</test>
+
+</suite> <!-- Suite -->
+

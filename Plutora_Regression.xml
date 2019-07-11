@@ -1,0 +1,662 @@
+<suite name="Suite" preserve-order="true">
+	<listeners>
+	<listener class-name="com.plutora.utils.Listener"></listener>
+	<listener class-name="com.plutora.utils.AnnotationTransformer"></listener>
+	</listeners>
+
+	<parameter name="testDataFile" value="testData.properties" />
+	<parameter name="objectMapFile" value="objectMap.properties" />
+	<parameter name="releasesFile" value="releasesMap.properties" />
+	<parameter name="environmentFile" value="environmentMap.properties" />
+	<parameter name="deploymentFile" value="deploymentMap.properties" />
+	<parameter name="newUserFile" value="newUserMap.properties" />
+	<parameter name="blockoutFile" value="blockoutMap.properties" />
+	<parameter name="changesFile" value="changesMap.properties" />
+	<parameter name="loginFile" value="login.properties" />
+	<parameter name="tecrFile" value="tecrMap.properties" />
+	<parameter name="tebrFile" value="tebrMap.properties" />
+	<parameter name="systemsFile" value="systemsMap.properties" />
+	<parameter name="pirFile" value="pirMap.properties" />
+	<parameter name="customizationFile" value="customizationMap.properties" />
+	<parameter name="insightsFile" value="insightsMap.properties" />
+	<parameter name="systemsImpactMatrixFile" value="systemsImpactMatrixMap.properties" />
+	<parameter name="environmentImpactMatrixFile" value="environmentImpactMatrixMap.properties" />
+	<parameter name="organizationStructureFile" value="organizationStructure.properties" />
+	<parameter name="mainMenuFile" value="mainMenuMap.properties" />
+	<parameter name="dashboardFile" value="dashboardMap.properties" />
+	<parameter name="initiativeFile" value="initiativeMap.properties" />
+	<parameter name="reacttebrFile" value="reacttebrMap.properties" />
+
+	<parameter name="browser" value="CHROME" />
+	<parameter name="platform" value="Mac" />
+	<parameter name="url" value="https://demo.plutora.co/" />
+	<parameter name="pageLoadTimeOutInSec" value="20" />
+	<parameter name="implicitWaitInSec" value="30" />
+	<parameter name="domain" value="Demo" />
+	<parameter name="username" value="npmadmin@plutora.com"/>
+	<parameter name="password" value="password123" />
+	
+	<parameter name="hubUrl"
+		value="http://192.168.2.35:5587/wd/hub" />
+	<parameter name="chromedriverPath"
+		value="/Users/ce533/Downloads/chromedriver" />
+	<!-- <parameter name="chromedriverPath" value="D:\AutomationSoftwares\BrowserExe\chromedriver.exe" 
+		/> -->
+	<!-- <parameter name="chromedriverPath" value="C:\Users\LABTEST-4\Downloads\chromedriver.exe" /> -->
+
+	<!-- <groups> <define name="All"> <include name="SmokeTests" /> <include 
+		name="RegressionTests" /> </define> <run> <include name="All" /> </run> </groups> -->
+		
+		
+	<!--===================================Forgot Password========================================= -->
+	<!--  <test name="Forgot Password">
+		<classes>
+			<class name="com.plutora.testplan.ForgotPassword" />
+		</classes>
+	</test> -->
+
+	<!--===================================Login========================================= -->
+	<test name="PlutoraLogin">
+		<classes>
+			<class name="com.plutora.testconfig.PlutoraConfiguration" />
+			<class name="com.plutora.testplan.Login" />
+		</classes>
+	</test>
+	<!--===================================Customization Precondition========================================= -->
+	
+	<test name="PlutoraCustomizationPrecondition">
+		<classes>
+			<class name="com.plutora.testplan.CustomizationPrecondition" />
+		</classes>
+	</test>
+
+	<!--====================================Release Manager========================================= -->
+
+	 <test name="PlutoraReleases-GridTest">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesGrid" />
+		</classes>
+	</test>
+	 <test name="PlutoraReleases-WindowTest">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesWindow" />
+		</classes>
+	</test>
+	<test name="PlutoraReleases-WindowManifestTabTab">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesWindowManifestTab" />
+		</classes>
+	</test>
+	 <test name="PlutoraReleases-WindowDetailsTab">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesWindowDetailsTab" />
+		</classes>
+	</test>
+	<test name="PlutoraReleases-WindowAdditionInformationTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.ReleasesWindowAdditionInformationTab" />
+		</classes>
+	</test>
+	<test name="PlutoraReleases-WindowSystemsTab">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesWindowSystemsTab" />
+		</classes>
+	</test>
+	<test name="PlutoraReleases-WindowEventTab">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesWindowEventTab" />
+		</classes>
+	</test>
+	<test name="PlutoraReleases-WindowChangeTab">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesWindowChangeTab" />
+		</classes>
+	</test>
+	<test name="PlutoraReleases-WindowEnvironmentTab">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesWindowEnvironmentTab" />
+		</classes>
+	</test>
+	
+	<test name="PlutoraReleases-WindowShakeholderAndActivitiesTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.ReleasesWindowShakeholderAndActivitiesTab" />
+		</classes>
+	</test>
+	
+	<test name="PlutoraReleases-ReleasesWindowActivityCriteriaWindow">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesWindowActivityCriteriaWindow" />
+		</classes>
+	</test>
+	 
+	 
+	<test name="PlutoraReleases-ActivitiesTabCustomFields">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesWindowActivitiesTabCustomFields" />
+		</classes>
+	</test>
+	
+	
+	<test name="PlutoraReleases-LinkedItemsTab">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesWindowLinkedItemsTab" />
+		</classes>
+	</test>
+	
+	
+	<test name="PlutoraReleases-WindowCapacityTab">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesWindowCapacityTab" />
+		</classes>
+	</test> 
+	
+	
+	<test name="PlutoraReleases-CapacityCustomFields">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesWindowCapacityCustomFields" />
+		</classes>
+	</test>
+	
+	<test name="PlutoraReleases-CommentsTab">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesWindowCommentsTab" />
+		</classes>
+	</test>
+ 
+ 
+	<!--====================================Environment Requests========================================= -->
+	  <test name="PlutoraEnvironmentRequest">
+		<classes>
+			<class name="com.plutora.testplan.EnvironmentRequest" />
+		</classes>
+	</test>
+	<test name="PlutoraEnvironmentRequest-TECRTabGrid">
+		<classes>
+			<class
+				name="com.plutora.testplan.EnvironmentRequestTECRTabGrid" />
+		</classes>
+	</test>
+	<test name="PlutoraEnvironmentRequest-TECRDetailsTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.EnvironmentRequestTECRDetailsTab" />
+		</classes>
+	</test> 
+	<test name="PlutoraEnvironmentRequest-TECRAdditionalInformationTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.EnvironmentRequestTECRAdditionalInformationTab" />
+		</classes>
+	</test>
+	<test name="PlutoraEnvironmentRequest-TECRLinkedChangeTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.EnvironmentRequestTECRLinkedChangeTab" />
+		</classes>
+	</test>
+	<test name="PlutoraEnvironmentRequest-TEBRTabGrid">
+		<classes>
+			<class
+				name="com.plutora.testplan.EnvironmentRequestTEBRTabGrid" />
+		</classes>
+	</test>
+	<test name="PlutoraEnvironmentRequest-TEBRAdditionalInformationTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.EnvironmentRequestTEBRAdditionalInformationTab" />
+		</classes>
+	</test>
+	<test name="PlutoraEnvironmentRequest-TEBRWindowDetailsTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.EnvironmentRequestTEBRWindowDetailsTab" />
+		</classes>
+	</test>
+
+	<test name="PlutoraEnvironmentRequest-MyEnvironmentBookingTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.EnvironmentRequestMyEnvironmentBookingTab" />
+		</classes>
+	</test> 
+	<test name="PlutoraEnvironmentRequest-MyEnvironmentBookingWindow">
+		<classes>
+			<class
+				name="com.plutora.testplan.EnvironmentRequestMyEnvironmentBookingWindow" />
+		</classes>
+	</test> 
+	<!--====================================Environments========================================= -->
+	 <test name="PlutoraEnvironments">
+		<classes>
+			<class name="com.plutora.testplan.Environments" />
+		</classes>
+	</test>
+	<test name="PlutoraEnvironments-WindowDetailsTab">
+		<classes>
+			<class name="com.plutora.testplan.EnvironmentsWindowDetailsTab" />
+		</classes>
+	</test>
+	<test name="PlutoraEnvironments-WindowAdditionalInformationTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.EnvironmentsWindowAdditionalInformationTab" />
+		</classes>
+	</test>
+	<test name="PlutoraEnvironments-WindowStakeholderTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.EnvironmentsWindowStakeholdersTab" />
+		</classes>
+	</test> 
+	
+	<test name="PlutoraEnvironments-WindowLinkedItemsTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.EnvironmentsWindowLinkedItemsTab" />
+		</classes>
+	</test> 
+	<!--====================================Changes========================================= -->
+	 <test name="PlutoraChanges-WindowChangeGridTab">
+		<classes>
+			<class name="com.plutora.testplan.ChangesWindowChangeGrid" />
+		</classes>
+	</test>
+	<test name="PlutoraChanges-WindowDetailsTab">
+		<classes>
+			<class name="com.plutora.testplan.ChangesWindowDetailsTab" />
+		</classes>
+	</test>
+	<test name="PlutoraChanges-WindowAdditionInformationTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.ChangesWindowAdditionInformationTab" />
+		</classes>
+	</test>
+	<test name="PlutoraChanges-WindowShakeholdersTab">
+		<classes>
+			<class name="com.plutora.testplan.ChangesWindowShakeholdersTab" />
+		</classes>
+	</test>
+	<test name="PlutoraChanges-WindowSystemsTab">
+		<classes>
+			<class name="com.plutora.testplan.ChangesWindowSystemsTab" />
+		</classes>
+	</test>
+	<test name="PlutoraChanges-WindowDeliveryReleaseTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.ChangesWindowDeliveryReleaseTab" />
+		</classes>
+	</test> 
+	<!--====================================Systems========================================= -->
+	 <test name="PlutoraSystems-WindowSystemGridTab">
+		<classes>
+			<class name="com.plutora.testplan.SystemsTab" />
+		</classes>
+	</test>
+	<test name="PlutoraSystems-WindowSystemDetailsTab">
+		<classes>
+			<class name="com.plutora.testplan.SystemsWindowDetailsTab" />
+		</classes>
+	</test>
+	<test name="PlutoraSystems-WindowSystemAdditionalInformationTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.SystemsWindowAdditionalInformationTab" />
+		</classes>
+	</test>
+	<test name="PlutoraSystems-WindowSystemDependenciesTab">
+		<classes>
+			<class name="com.plutora.testplan.SystemsWindowDependenciesTab" />
+		</classes>
+	</test>
+	<test name="PlutoraSystems-WindowSystemApproversTab">
+		<classes>
+			<class name="com.plutora.testplan.SystemsWindowApproversTab" />
+		</classes>
+	</test> 
+	
+	<!--====================================Blockout Periods=========================================-->
+	  <test name="PlutoraBlockoutPeriods">
+		<classes>
+			<class name="com.plutora.testplan.BlockoutPeriods" />
+		</classes>
+	</test> 
+	
+	<!--====================================Deployment Plan========================================= -->
+	 <test name="PlutoraDeploymentPlan-Library">
+		<classes>
+			<class name="com.plutora.testplan.DeploymentPlanLibary" />
+		</classes>
+	</test>
+	<test name="PlutoraDeploymentPlan-InformationTab">
+		<classes>
+			<class name="com.plutora.testplan.DeploymentPlanInformationTab" />
+		</classes>
+	</test>
+	<test name="PlutoraDeploymentPlan-RACIMatrix">
+		<classes>
+			<class name="com.plutora.testplan.DeploymentPlanRACIMatrix" />
+		</classes>
+	</test>
+	<test name="PlutoraDeploymentPlan-ActivitesTab">
+		<classes>
+			<class name="com.plutora.testplan.DeploymentPlanActivitesTab" />
+		</classes>
+	</test>
+	<test name="PlutoraDeploymentPlan-ActivitesTabCustomFields">
+		<classes>
+			<class
+				name="com.plutora.testplan.DeploymentPlanActivitesTabCustomFields" />
+		</classes>
+	</test>
+	<test name="PlutoraDeploymentPlan-ActivitySetsTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.DeploymentPlanActivitySetsTab" />
+		</classes>
+	</test>
+	<test name="PlutoraDeploymentPlan-CheckpontsTab">
+		<classes>
+			<class name="com.plutora.testplan.DeploymentPlanCheckpointsTab" />
+		</classes>
+	</test>
+	<test name="PlutoraDeploymentPlan-ActivityIssuesTab">
+		<classes>
+			<class name="com.plutora.testplan.DeploymentPlanIssuesTab" />
+		</classes>
+	</test>
+	<test name="PlutoraDeploymentPlan-AdditionalInformationTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.DeploymentPlanAdditionalInformationTab" />
+		</classes>
+	</test> 
+
+	<!--===================================Environment Groups========================================= -->
+	 <test name="PlutoraEnvironmentGroups-Manage">
+		<classes>
+			<class name="com.plutora.testplan.EnvironmentManageGroups" />
+		</classes>
+	</test>
+	<test name="PlutoraEnvironmentGroups-DetailsTab">
+		<classes>
+			<class name="com.plutora.testplan.EnvironmentGroupsDetailsTab" />
+		</classes>
+	</test>
+
+	<test name="PlutoraEnvironmentGroups-AdditionalInformationTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.EnvironmentGroupsAdditionalInformationTab" />
+		</classes>
+	</test>
+
+	<test name="PlutoraEnvironmentGroups-GroupMemberTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.EnvironmentGroupsGroupMembersTab" />
+		</classes>
+	</test>
+	<test name="PlutoraEnvironmentGroups-ConnectivityTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.EnvironmentGroupsConnectivityTab" />
+		</classes>
+	</test> 
+<!--====================================PIR Manager========================================= -->
+	 <test name="PlutoraPIRManager-Grid">
+		<classes>
+			<class name="com.plutora.testplan.PIRManagerGrid" />
+		</classes>
+	</test>
+	<test name="PlutoraPIRManager-ItemGrid">
+		<classes>
+			<class name="com.plutora.testplan.PIRManagerItemGrid" />
+		</classes>
+	</test>
+	<test name="PlutoraPIRManager-WindowItemGrid">
+		<classes>
+			<class name="com.plutora.testplan.PIRWindowItemGrid" />
+		</classes>
+	</test> 
+	<test name="PlutoraPIRManager-WindowDetailsTab">
+		<classes>
+			<class name="com.plutora.testplan.PIRWindowDetailsTab" />
+		</classes>
+	</test>
+	<test name="PlutoraPIRManager-WindowAdditionalInformationTab">
+		<classes>
+			<class name="com.plutora.testplan.PIRWindowAdditionalInformationTab" />
+		</classes>
+	</test>
+	 <test name="PlutoraPIRManager-WindowQuestionnaireTab">
+		<classes>
+			<class name="com.plutora.testplan.PIRWindowQuestionnaireTab" />
+		</classes>
+	</test>
+	<test name="PlutoraPIRManager-temWindowDetailsArea">
+		<classes>
+			<class name="com.plutora.testplan.PIRItemWindowDetailsArea" />
+		</classes>
+	</test>
+	<test name="PlutoraPIRManager-ItemWindowPMARCI">
+		<classes>
+			<class name="com.plutora.testplan.PIRItemWindowItemPMARCI" />
+		</classes>
+	</test> 
+	<test name="PlutoraPIRManager-ItemWindowAdditionalInformationArea">
+		<classes>
+			<class name="com.plutora.testplan.PIRItemWindowAdditionalInformationArea" />
+		</classes>
+	</test> 
+	<test name="PlutoraPIRManager-ItemWindowCommentsTab">
+		<classes>
+			<class name="com.plutora.testplan.PIRItemWindowCommentsTab" />
+		</classes>
+	</test> 
+	
+	<!--===================================Release Scheduler========================================= -->
+	<test name="PlutoraModuleReleaseScheduler">
+		<classes>
+			<class name="com.plutora.testplan.ReleaseSchedule" />
+		</classes>
+	</test>
+	
+	<!--===================================System Impact Matrix========================================= -->
+	 <test name="PlutoraSystemsImpactMatrix">
+		<classes>
+			<class name="com.plutora.testplan.SystemsImpactMatrix" />
+		</classes>
+	</test>
+	
+	<!--===================================TECR Maintenance Bench========================================= -->
+	 <!-- <test name="TECR Maintenance Bench">
+		<classes>
+			<class name="com.plutora.testplan.TECRMaintenanceBench" />
+		</classes>
+	</test> -->
+	
+	<!--===================================Environment Impact Matrix========================================= -->
+	 <test name="PlutoraEnvironmentImpactMatrix">
+		<classes>
+			<class name="com.plutora.testplan.EnvironmentImpactMatrix" />
+		</classes>
+	</test>
+	
+	<!--===================================Environment Map========================================= -->
+	 <test name="PlutoraEnvironmentMap">
+		<classes>
+			<class name="com.plutora.testplan.EnvironmentMap" />
+		</classes>
+	</test>
+	<!--===================================Environment Stack========================================= -->
+	 <test name="PlutoraEnvironmentStack">
+		<classes>
+			<class name="com.plutora.testplan.EnvironmentStack" />
+		</classes>
+	</test>
+	<!--===================================Organization Structure========================================= -->
+	 <test name="PlutoraOrganizationStructure">
+		<classes>
+			<class name="com.plutora.testplan.OrganizationStructure" />
+		</classes>
+	</test>
+	<!--===================================Deployment Schedule========================================= -->
+	  <test name="PlutoraDeploymentSchedule">
+		<classes>
+			<class name="com.plutora.testplan.DeploymentPlanSchedule" />
+		</classes>
+	</test> 
+	<!--===================================Activites By Status========================================= -->
+	<test name="PlutoraActivitiesByStatus">
+		<classes>
+			<class name="com.plutora.testplan.ActivitiesByStatus" />
+		</classes>
+	</test> 
+	
+	<test name="PlutoraReleaseCalendar">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesCalender" />
+		</classes>
+	</test> 
+	
+	<!--==================================User Management========================================= -->
+	 <test name="PlutoraUserManagement">
+		<classes>
+			<class name="com.plutora.testplan.UserManagement" />
+		</classes>
+	</test>  
+	  <test name="PlutoraUserManagement-ManageGroups">
+		<classes>
+			<class name="com.plutora.testplan.UserManagementManageGroups" />
+		</classes>
+	</test>  
+	<test name="PlutoraUserManagement-ManagePermission">
+		<classes>
+			<class name="com.plutora.testplan.UserManagementManagePermissions" />
+		</classes>
+	</test>
+	<!--===================================Environment Schedule========================================= -->
+	  <test name="PlutoraEnvironmentSchedule">
+		<classes>
+			<class name="com.plutora.testplan.EnvironmentSchedule" />
+		</classes>
+	</test> 
+	
+	<!--===================================Main Menu========================================= -->
+	  <test name="PlutoraMainMenu">
+		<classes>
+			<class name="com.plutora.testplan.MainMenu" />
+		</classes>
+	</test> 
+	
+	<!--===================================Insights========================================= -->
+	<!--  <test name="PlutoraInsightsManagementMetrics">
+		<classes>
+			<class name="com.plutora.testplan.InsightsManagementMetrics" />
+		</classes>
+	</test>
+	<test name="PlutoraInsightsManagementActivitySummaryAndProgress">
+		<classes>
+			<class name="com.plutora.testplan.InsightsManagementActivitySummaryAndProgress" />
+		</classes>
+	</test>  
+	<test name="PlutoraInsightsManagementActivityDue">
+		<classes>
+			<class name="com.plutora.testplan.InsightsManagementActivityDue" />
+		</classes>
+	</test>
+	<test name="PlutoraInsightsManagementOverdueItems">
+		<classes>
+			<class name="com.plutora.testplan.InsightsManagementOverdueItems" />
+		</classes>
+	</test>
+	<test name="PlutoraInsightsManagementTECR">
+		<classes>
+			<class name="com.plutora.testplan.InsightsManagementTECR" />
+		</classes>
+	</test>
+	<test name="PlutoraInsightsManagementSystems">
+		<classes>
+			<class name="com.plutora.testplan.InsightsManagementSystems" />
+		</classes>
+	</test>
+	 <test name="PlutoraInsightsManagementGateCompliance">
+		<classes>
+			<class name="com.plutora.testplan.InsightsManagementGateCompliance" />
+		</classes>
+	</test> 
+	<test name="PlutoraInsightsManagementEscapingDefects">
+		<classes>
+			<class name="com.plutora.testplan.InsightsManagementEscapingDefects" />
+		</classes>
+	</test> -->
+	<!--===================================Customization========================================= -->
+	
+	<test name="CustomizationChange">
+		<classes>
+			<class name="com.plutora.testplan.CustomizationChange" />
+		</classes>
+	</test>
+	 <test name="CustomizationStakeholders">
+		<classes>
+			<class name="com.plutora.testplan.CustomizationStakeholders" />
+		</classes>
+	</test> 
+	<test name="CustomizationEnvironments">
+		<classes>
+			<class name="com.plutora.testplan.CustomizationEnvironments" />
+		</classes>
+	</test>
+	<test name="CustomizationDeploymentPlan">
+		<classes>
+			<class name="com.plutora.testplan.CustomizationDeploymentPlan" />
+		</classes>
+	</test>
+	<test name="CustomizationReleases">
+		<classes>
+			<class name="com.plutora.testplan.CustomizationReleases" />
+		</classes>
+	</test>
+	 <test name="CustomizationPIR">
+		<classes>
+			<class name="com.plutora.testplan.CustomizationPIR" />
+		</classes>
+	</test> 
+	<test name="CustomizationInitiative">
+		<classes>
+			<class name="com.plutora.testplan.CustomizationInitiative" />
+		</classes>
+	</test> 
+	<test name="CustomizationDashboardsAndReports">
+		<classes>
+			<class name="com.plutora.testplan.CustomizationDashboardsAndReports" />
+		</classes>
+	</test> 
+	
+	<test name="CustomizationSiteSettings">
+		<classes>
+			<class name="com.plutora.testplan.CustomizationSiteSettings" />
+		</classes>
+	</test> 
+	
+	<test name="CustomizationEmails">
+		<classes>
+			<class name="com.plutora.testplan.CustomizationEmails" />
+		</classes>
+	</test> 
+	
+	<!--===================================Logout========================================= -->
+	<test name="PlutoraLogout">
+		<classes>
+			<class name="com.plutora.testplan.Logout" />
+		</classes>
+	</test>
+
+</suite> <!-- Suite -->
+
+

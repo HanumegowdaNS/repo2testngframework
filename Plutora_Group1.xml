@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Suite" preserve-order="true">
+	<listeners>
+	<listener class-name="com.plutora.utils.Listener"></listener>
+	<listener class-name="com.plutora.utils.AnnotationTransformer"></listener>
+	</listeners>
+
+	<parameter name="testDataFile" value="testData.properties" />
+	<parameter name="objectMapFile" value="objectMap.properties" />
+	<parameter name="releasesFile" value="releasesMap.properties" />
+	<parameter name="environmentFile" value="environmentMap.properties" />
+	<parameter name="deploymentFile" value="deploymentMap.properties" />
+	<parameter name="newUserFile" value="newUserMap.properties" />
+	<parameter name="blockoutFile" value="blockoutMap.properties" />
+	<parameter name="changesFile" value="changesMap.properties" />
+	<parameter name="loginFile" value="login.properties" />
+	<parameter name="tecrFile" value="tecrMap.properties" />
+	<parameter name="tebrFile" value="tebrMap.properties" />
+	<parameter name="systemsFile" value="systemsMap.properties" />
+	<parameter name="pirFile" value="pirMap.properties" />
+	<parameter name="customizationFile" value="customizationMap.properties" />
+	<parameter name="insightsFile" value="insightsMap.properties" />
+	<parameter name="systemsImpactMatrixFile" value="systemsImpactMatrixMap.properties" />
+	<parameter name="environmentImpactMatrixFile" value="environmentImpactMatrixMap.properties" />
+	<parameter name="organizationStructureFile" value="organizationStructure.properties" />
+	<parameter name="mainMenuFile" value="mainMenuMap.properties" />
+	<parameter name="dashboardFile" value="dashboardMap.properties" />
+	<parameter name="initiativeFile" value="initiativeMap.properties" />
+	<parameter name="reacttebrFile" value="reacttebrMap.properties" />
+	
+	<parameter name="browser" value="CHROME" />
+	<parameter name="platform" value="Windows" />
+
+	<parameter name="url" value="https://demoa.plutora.org/" />
+	<parameter name="pageLoadTimeOutInSec" value="60" />
+	<parameter name="implicitWaitInSec" value="60" />
+	<parameter name="domain" value="Demoa" />
+	<parameter name="username" value="Abhisheka.katpalli@plutora.com"/>
+	<parameter name="password" value="test1234" />
+
+	<parameter name="hubUrl"
+		value="http://192.168.2.35:5587/wd/hub" />
+	<parameter name="chromedriverPath"
+		value="C:/Users/LABTEST-4/Downloads/chromedriver.exe" />
+
+	<!--===================================Login========================================= -->
+	<test name="PlutoraLogin">
+		<classes>
+		    <class name="com.plutora.testconfig.PlutoraConfiguration" />
+			<class name="com.plutora.testplan.Login" />
+		</classes>
+	</test>
+	
+	<!--====================================Release Manager========================================= -->
+
+	 <test name="PlutoraReleases-GridTest">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesGrid" />
+		</classes>
+	</test>
+	 <test name="PlutoraReleases-WindowTest">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesWindow" />
+		</classes>
+	</test>
+	<test name="PlutoraReleases-WindowManifestTabTab">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesWindowManifestTab" />
+		</classes>
+	</test>
+	 <test name="PlutoraReleases-WindowDetailsTab">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesWindowDetailsTab" />
+		</classes>
+	</test>
+	<test name="PlutoraReleases-WindowAdditionInformationTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.ReleasesWindowAdditionInformationTab" />
+		</classes>
+	</test>
+	<test name="PlutoraReleases-WindowSystemsTab">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesWindowSystemsTab" />
+		</classes>
+	</test>
+	<test name="PlutoraReleases-WindowEventTab">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesWindowEventTab" />
+		</classes>
+	</test>
+	<test name="PlutoraReleases-WindowChangeTab">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesWindowChangeTab" />
+		</classes>
+	</test>
+	<test name="PlutoraReleases-WindowEnvironmentTab">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesWindowEnvironmentTab" />
+		</classes>
+	</test>
+	
+	<test name="PlutoraReleases-WindowShakeholderAndActivitiesTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.ReleasesWindowShakeholderAndActivitiesTab" />
+		</classes>
+	</test>
+	
+	<test name="PlutoraReleases-ReleasesWindowActivityCriteriaWindow">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesWindowActivityCriteriaWindow" />
+		</classes>
+	</test>
+	 
+	 
+	<test name="PlutoraReleases-ActivitiesTabCustomFields">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesWindowActivitiesTabCustomFields" />
+		</classes>
+	</test>
+	
+	
+	<test name="PlutoraReleases-LinkedItemsTab">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesWindowLinkedItemsTab" />
+		</classes>
+	</test>
+	
+	
+	<test name="PlutoraReleases-WindowCapacityTab">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesWindowCapacityTab" />
+		</classes>
+	</test> 
+	
+	
+	<test name="PlutoraReleases-CapacityCustomFields">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesWindowCapacityCustomFields" />
+		</classes>
+	</test>
+	
+	<test name="PlutoraReleases-CommentsTab">
+		<classes>
+			<class name="com.plutora.testplan.ReleasesWindowCommentsTab" />
+		</classes>
+	</test>
+ 
+ <!--====================================Environments========================================= -->
+	 <test name="PlutoraEnvironments">
+		<classes>
+			<class name="com.plutora.testplan.Environments" />
+		</classes>
+	</test>
+	<test name="PlutoraEnvironments-WindowDetailsTab">
+		<classes>
+			<class name="com.plutora.testplan.EnvironmentsWindowDetailsTab" />
+		</classes>
+	</test>
+	<test name="PlutoraEnvironments-WindowAdditionalInformationTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.EnvironmentsWindowAdditionalInformationTab" />
+		</classes>
+	</test>
+	<test name="PlutoraEnvironments-WindowStakeholderTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.EnvironmentsWindowStakeholdersTab" />
+		</classes>
+	</test> 
+	
+	<test name="PlutoraEnvironments-WindowLinkedItemsTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.EnvironmentsWindowLinkedItemsTab" />
+		</classes>
+	</test> 
+	<!--===================================Environment Impact Matrix========================================= -->
+	
+	 <test name="PlutoraEnvironmentImpactMatrix">
+		<classes>
+			<class name="com.plutora.testplan.EnvironmentImpactMatrix" />
+		</classes>
+	</test>
+	
+	<!--===================================Environment Map========================================= -->
+	 <test name="PlutoraEnvironmentMap">
+		<classes>
+			<class name="com.plutora.testplan.EnvironmentMap" />
+		</classes>
+	</test>
+	<!--===================================Environment Stack========================================= -->
+	 <test name="PlutoraEnvironmentStack">
+		<classes>
+			<class name="com.plutora.testplan.EnvironmentStack" />
+		</classes>
+	</test>
+	
+	<!--===================================Activites By Status========================================= -->
+	<test name="PlutoraActivitiesByStatus">
+		<classes>
+			<class name="com.plutora.testplan.ActivitiesByStatus" />
+		</classes>
+	</test> 
+	
+	<!--==================================User Management========================================= -->
+	 <test name="PlutoraUserManagement">
+		<classes>
+			<class name="com.plutora.testplan.UserManagement" />
+		</classes>
+	</test>  
+	  <test name="PlutoraUserManagement-ManageGroups">
+		<classes>
+			<class name="com.plutora.testplan.UserManagementManageGroups" />
+		</classes>
+	</test>  
+	<test name="PlutoraUserManagement-ManagePermission">
+		<classes>
+			<class name="com.plutora.testplan.UserManagementManagePermissions" />
+		</classes>
+	</test>
+	
+
+
+ <!--===================================Logout========================================= -->
+	<test name="PlutoraLogout">
+		<classes>
+			<class name="com.plutora.testplan.Logout" />
+		</classes>
+	</test>
+
+</suite> <!-- Suite -->
+
+

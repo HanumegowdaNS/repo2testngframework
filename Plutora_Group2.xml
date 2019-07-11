@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Suite" preserve-order="true">
+	<listeners>
+	<listener class-name="com.plutora.utils.Listener"></listener>
+	<listener class-name="com.plutora.utils.AnnotationTransformer"></listener>
+	</listeners>
+
+	<parameter name="testDataFile" value="testData.properties" />
+	<parameter name="objectMapFile" value="objectMap.properties" />
+
+	<parameter name="releasesFile" value="releasesMap.properties" />
+	<parameter name="environmentFile" value="environmentMap.properties" />
+	<parameter name="deploymentFile" value="deploymentMap.properties" />
+	<parameter name="newUserFile" value="newUserMap.properties" />
+	<parameter name="blockoutFile" value="blockoutMap.properties" />
+	<parameter name="changesFile" value="changesMap.properties" />
+	<parameter name="loginFile" value="login.properties" />
+	<parameter name="tecrFile" value="tecrMap.properties" />
+	<parameter name="tebrFile" value="tebrMap.properties" />
+	<parameter name="systemsFile" value="systemsMap.properties" />
+	<parameter name="pirFile" value="pirMap.properties" />
+	<parameter name="customizationFile" value="customizationMap.properties" />
+	<parameter name="insightsFile" value="insightsMap.properties" />
+	<parameter name="systemsImpactMatrixFile" value="systemsImpactMatrixMap.properties" />
+	<parameter name="environmentImpactMatrixFile" value="environmentImpactMatrixMap.properties" />
+	<parameter name="organizationStructureFile" value="organizationStructure.properties" />
+	<parameter name="mainMenuFile" value="mainMenuMap.properties" />
+	<parameter name="dashboardFile" value="dashboardMap.properties" />
+	<parameter name="initiativeFile" value="initiativeMap.properties" />
+	<parameter name="reacttebrFile" value="reacttebrMap.properties" />
+
+	<parameter name="browser" value="CHROME" />
+	<parameter name="platform" value="Windows" />
+	<parameter name="url" value="https://demoa.plutora.org/" />
+	<parameter name="pageLoadTimeOutInSec" value="60" />
+	<parameter name="implicitWaitInSec" value="60" />
+	<parameter name="domain" value="Demoa" />
+	<parameter name="username" value="testlabmachine@yopmail.com"/>
+	<parameter name="password" value="test1234" />
+
+	<parameter name="hubUrl"
+		value="http://192.168.2.35:5587/wd/hub" />
+	<parameter name="chromedriverPath"
+		value="C:/Users/pooja.test/Downloads/chromedriver.exe" />
+	
+	<!--===================================Login========================================= -->
+	<test name="PlutoraLogin">
+		<classes>
+		    <class name="com.plutora.testconfig.PlutoraConfiguration" />
+			<class name="com.plutora.testplan.Login" />
+		</classes>
+	</test>
+	
+
+  <!--====================================Environment Requests========================================= -->
+	  <test name="PlutoraEnvironmentRequest">
+		<classes>
+			<class name="com.plutora.testplan.EnvironmentRequest" />
+		</classes>
+	</test>
+	<test name="PlutoraEnvironmentRequest-TECRTabGrid">
+		<classes>
+			<class
+				name="com.plutora.testplan.EnvironmentRequestTECRTabGrid" />
+		</classes>
+	</test>
+	<test name="PlutoraEnvironmentRequest-TECRDetailsTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.EnvironmentRequestTECRDetailsTab" />
+		</classes>
+	</test> 
+	<test name="PlutoraEnvironmentRequest-TECRAdditionalInformationTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.EnvironmentRequestTECRAdditionalInformationTab" />
+		</classes>
+	</test>
+	<test name="PlutoraEnvironmentRequest-TECRLinkedChangeTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.EnvironmentRequestTECRLinkedChangeTab" />
+		</classes>
+	</test>
+	<test name="PlutoraEnvironmentRequest-TEBRTabGrid">
+		<classes>
+			<class
+				name="com.plutora.testplan.EnvironmentRequestTEBRTabGrid" />
+		</classes>
+	</test>
+	<test name="PlutoraEnvironmentRequest-TEBRAdditionalInformationTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.EnvironmentRequestTEBRAdditionalInformationTab" />
+		</classes>
+	</test>
+	<test name="PlutoraEnvironmentRequest-TEBRWindowDetailsTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.EnvironmentRequestTEBRWindowDetailsTab" />
+		</classes>
+	</test>
+
+	<test name="PlutoraEnvironmentRequest-MyEnvironmentBookingTab">
+		<classes>
+			<class
+				name="com.plutora.testplan.EnvironmentRequestMyEnvironmentBookingTab" />
+		</classes>
+	</test> 
+	<test name="PlutoraEnvironmentRequest-MyEnvironmentBookingWindow">
+		<classes>
+			<class
+				name="com.plutora.testplan.EnvironmentRequestMyEnvironmentBookingWindow" />
+		</classes>
+	</test> 
+	<!--====================================Blockout Periods=========================================-->
+	  <test name="PlutoraBlockoutPeriods">
+		<classes>
+			<class name="com.plutora.testplan.BlockoutPeriods" />
+		</classes>
+	</test> 
+	<!--====================================PIR Manager========================================= -->
+	 <test name="PlutoraPIRManager-Grid">
+		<classes>
+			<class name="com.plutora.testplan.PIRManagerGrid" />
+		</classes>
+	</test>
+	<test name="PlutoraPIRManager-ItemGrid">
+		<classes>
+			<class name="com.plutora.testplan.PIRManagerItemGrid" />
+		</classes>
+	</test>
+	<test name="PlutoraPIRManager-WindowItemGrid">
+		<classes>
+			<class name="com.plutora.testplan.PIRWindowItemGrid" />
+		</classes>
+	</test> 
+	<test name="PlutoraPIRManager-WindowDetailsTab">
+		<classes>
+			<class name="com.plutora.testplan.PIRWindowDetailsTab" />
+		</classes>
+	</test>
+	<test name="PlutoraPIRManager-WindowAdditionalInformationTab">
+		<classes>
+			<class name="com.plutora.testplan.PIRWindowAdditionalInformationTab" />
+		</classes>
+	</test>
+	 <test name="PlutoraPIRManager-WindowQuestionnaireTab">
+		<classes>
+			<class name="com.plutora.testplan.PIRWindowQuestionnaireTab" />
+		</classes>
+	</test>
+	<test name="PlutoraPIRManager-temWindowDetailsArea">
+		<classes>
+			<class name="com.plutora.testplan.PIRItemWindowDetailsArea" />
+		</classes>
+	</test>
+	<test name="PlutoraPIRManager-ItemWindowPMARCI">
+		<classes>
+			<class name="com.plutora.testplan.PIRItemWindowItemPMARCI" />
+		</classes>
+	</test> 
+	<test name="PlutoraPIRManager-ItemWindowAdditionalInformationArea">
+		<classes>
+			<class name="com.plutora.testplan.PIRItemWindowAdditionalInformationArea" />
+		</classes>
+	</test> 
+	<test name="PlutoraPIRManager-ItemWindowCommentsTab">
+		<classes>
+			<class name="com.plutora.testplan.PIRItemWindowCommentsTab" />
+		</classes>
+	</test> 
+	
+	<!--===================================Release Scheduler========================================= -->
+	<test name="PlutoraModuleReleaseScheduler">
+		<classes>
+			<class name="com.plutora.testplan.ReleaseSchedule" />
+		</classes>
+	</test>
+	
+	 <test name="PlutoraOrganizationStructure">
+		<classes>
+			<class name="com.plutora.testplan.OrganizationStructure" />
+		</classes>
+	</test>
+	<!--===================================Deployment Schedule========================================= -->
+	  <test name="PlutoraDeploymentSchedule">
+		<classes>
+			<class name="com.plutora.testplan.DeploymentPlanSchedule" />
+		</classes>
+	</test> 
+	<!--===================================Main Menu========================================= -->
+	  <test name="PlutoraMainMenu">
+		<classes>
+			<class name="com.plutora.testplan.MainMenu" />
+		</classes>
+	</test> 
+	
+ <!--===================================Logout========================================= -->
+	<test name="PlutoraLogout">
+		<classes>
+			<class name="com.plutora.testplan.Logout" />
+		</classes>
+	</test>
+
+</suite> <!-- Suite -->
+
+

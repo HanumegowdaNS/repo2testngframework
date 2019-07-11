@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Suite" preserve-order="true">
+	<listeners>
+	<listener class-name="com.plutora.utils.Listener"></listener>
+	<listener class-name="com.plutora.utils.AnnotationTransformer"></listener>
+	</listeners>
+
+	<parameter name="testDataFile" value="testData.properties" />
+	<parameter name="objectMapFile" value="objectMap.properties" />
+
+	<parameter name="releasesFile" value="releasesMap.properties" />
+	<parameter name="environmentFile" value="environmentMap.properties" />
+	<parameter name="deploymentFile" value="deploymentMap.properties" />
+	<parameter name="newUserFile" value="newUserMap.properties" />
+	<parameter name="blockoutFile" value="blockoutMap.properties" />
+	<parameter name="changesFile" value="changesMap.properties" />
+	<parameter name="loginFile" value="login.properties" />
+	<parameter name="tecrFile" value="tecrMap.properties" />
+	<parameter name="tebrFile" value="tebrMap.properties" />
+	<parameter name="systemsFile" value="systemsMap.properties" />
+	<parameter name="pirFile" value="pirMap.properties" />
+	<parameter name="customizationFile" value="customizationMap.properties" />
+	<parameter name="insightsFile" value="insightsMap.properties" />
+	<parameter name="systemsImpactMatrixFile" value="systemsImpactMatrixMap.properties" />
+	<parameter name="environmentImpactMatrixFile" value="environmentImpactMatrixMap.properties" />
+	<parameter name="organizationStructureFile" value="organizationStructure.properties" />
+	<parameter name="mainMenuFile" value="mainMenuMap.properties" />
+	<parameter name="dashboardFile" value="dashboardMap.properties" />
+	<parameter name="initiativeFile" value="initiativeMap.properties" />
+	<parameter name="reacttebrFile" value="reacttebrMap.properties" />
+
+	<parameter name="browser" value="CHROME" />
+	<parameter name="platform" value="Windows" />
+	<parameter name="url" value="https://demoa.plutora.org/" />
+	<parameter name="pageLoadTimeOutInSec" value="60" />
+	<parameter name="implicitWaitInSec" value="60" />
+	<parameter name="domain" value="Demoa" />
+	<parameter name="username" value="testlabmachine@yopmail.com"/>
+	<parameter name="password" value="test1234" />
+
+	<parameter name="hubUrl"
+		value="http://192.168.2.35:5587/wd/hub" />
+	<parameter name="chromedriverPath"
+		value="C:/Users/pooja.test/Downloads/chromedriver.exe" />
+	
+	<!--===================================Login========================================= -->
+	<test name="PlutoraLogin">
+		<classes>
+		    <class name="com.plutora.testconfig.PlutoraConfiguration" />
+			<class name="com.plutora.testplan.Login" />
+		</classes>
+	</test>
+	
+
+  <test name="CustomizationDeploymentPlan">
+		<classes>
+			<class name="com.plutora.testplan.CustomizationDeploymentPlan" />
+		</classes>
+	</test>
+	<test name="CustomizationInitiative">
+		<classes>
+			<class name="com.plutora.testplan.CustomizationInitiative" />
+		</classes>
+	</test> 
+	<test name="CustomizationDashboardsAndReports">
+		<classes>
+			<class name="com.plutora.testplan.CustomizationDashboardsAndReports" />
+		</classes>
+	</test> 
+	
+	<test name="CustomizationEmails">
+		<classes>
+			<class name="com.plutora.testplan.CustomizationEmails" />
+		</classes>
+	</test> 
+	
+	
+ <!--===================================Logout========================================= -->
+	<test name="PlutoraLogout">
+		<classes>
+			<class name="com.plutora.testplan.Logout" />
+		</classes>
+	</test>
+
+</suite> <!-- Suite -->
+
+

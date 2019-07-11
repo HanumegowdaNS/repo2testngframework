@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Suite">
+	<listeners>
+		<listener class-name="com.plutora.utils.Listener"></listener>
+		<listener class-name="com.plutora.utils.AnnotationTransformer"></listener>
+	</listeners>
+
+	<parameter name="testDataFile" value="testData.properties" />
+	<parameter name="objectMapFile" value="objectMap.properties" />
+	<parameter name="blockoutFile" value="blockoutMap.properties" />
+	<parameter name="loginFile" value="login.properties" />
+
+	<parameter name="pageLoadTimeOutInSec" value="60" />
+	<parameter name="implicitWaitInSec" value="60" />
+	
+	<parameter name="hubUrl" value="http://192.168.1.108:5555/wd/hub" />
+
+	<!-- <parameter name="browser" value="${WebBrowser}" /> 
+	<parameter name="platform" value="${Platform}" />
+	<parameter name="url" value="${URL}" />
+	<parameter name="domain" value="${Domain}" />
+	<parameter name="username" value="${Username}"/>
+	<parameter name="password" value="${Password}" />
+	<parameter name="chromedriverPath" value="${Browser Driver}" /> -->
+	
+	<parameter name="browser" value="CHROME" />
+	<parameter name="platform" value="Windows" />
+	<parameter name="url" value="https://demops.plutora.com/login" />
+	<parameter name="domain" value="DemoPS-Analytics" />
+	<parameter name="username" value="abhisheka.katpalli@plutora.com"/>
+	<parameter name="password" value="password123" />
+	<parameter name="chromedriverPath" value="D:\AutomationSoftwares\SeleniumJARs\chromedriver.exe" />
+	<!-- <parameter name="chromedriverPath" value="/Users/ce533/Downloads/chromedriver"/> -->
+
+	<test name="PlutoraLoginTest">
+		<classes>
+			<class name="com.plutora.testconfig.AnalyticsConfigurations" />
+			<class name="com.plutora.testplan.Login" />
+			<class name="com.reports.testplan.Analytics">
+				<methods>
+					<include name="analytics_01"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Blockout Period Workbook">
+		<classes>
+			<class name="com.reports.testplan.BlockoutReport">
+				<methods>
+					<include name="blockoutreport_01"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="PlutoraLogoutTest">
+		<classes>
+			<class name="com.reports.testplan.Analytics">
+				<methods>
+					<include name="analytics_02"/>
+				</methods>
+			</class>
+			<class name="com.plutora.testplan.Logout" />
+		</classes>
+	</test>
+</suite> <!-- Suite -->
+

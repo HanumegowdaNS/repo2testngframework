@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Suite">
+	<listeners>
+		<listener class-name="com.plutora.utils.Listener"></listener>
+		<listener class-name="com.plutora.utils.AnnotationTransformer"></listener>
+	</listeners>
+
+	<parameter name="testDataFile" value="testData.properties" />
+	<parameter name="objectMapFile" value="objectMap.properties" />
+
+	<parameter name="loginFile" value="login.properties" />
+	<parameter name="releasesFile" value="releasesMap.properties" />
+	<parameter name="changesFile" value="changesMap.properties" />
+	<parameter name="tecrFile" value="tecrMap.properties" />
+	<parameter name="tebrFile" value="tebrMap.properties" />
+	<parameter name="jiraFile" value="jira.properties" />
+	<parameter name="customizationFile" value="customizationMap.properties" />
+	<parameter name="testDataFile" value="testData.properties" />
+	<parameter name="pageLoadTimeOutInSec" value="20" />
+	<parameter name="implicitWaitInSec" value="20" />
+	<parameter name="hubUrl" value="http://192.168.1.108:5555/wd/hub" />
+
+	<!-- <parameter name="browser" value="${WebBrowser}" /> 
+	<parameter name="platform" value="${Platform}" />
+	<parameter name="url" value="${URL}" />
+	<parameter name="domain" value="${Domain}" />
+	<parameter name="username" value="${Username}"/>
+	<parameter name="password" value="${Password}" />
+	<parameter name="chromedriverPath" value="${Browser Driver}" /> -->
+	
+	<parameter name="platform" value="Windows" />
+	<parameter name="browser" value="CHROME" />
+	<parameter name="chromedriverPath" value="D:\AutomationSoftwares\SeleniumJARs\chromedriver.exe" />
+	<!-- Plutora Details -->
+	<parameter name="url" value="https://demoa.plutora.org/login" />
+	<parameter name="domain" value="Demo-Integrations" />
+	<parameter name="username" value="abhisheka.katpalli@plutora.com"/>
+	<parameter name="password" value="test1234" />
+	<!-- Jira Details -->
+	<parameter name="jiraurl" value="https://plutora.atlassian.net" />
+	<parameter name="jiraUserName" value="abhisheka.katpalli@plutora.com" />
+	<parameter name="jiraPassword" value="password123"/>
+	<!-- Service Now Details -->
+	<parameter name="snowurl" value="https://ven01981.service-now.com" />
+	<parameter name="snowUserName" value="admin" />
+	<parameter name="snowPassword" value="PC_~,k00Y37w"/>
+
+
+	<test name="PlutoraLoginTest">
+		<classes>
+			<class name="com.plutora.testconfig.IntegrationsConfigurations" />
+			<class name="com.plutora.testplan.Login" />
+		</classes>
+	</test>
+	<test name="Push A Release to Jira">
+		<classes>
+			<class name="com.plutora.testplan.Releases" >
+				<methods>
+					<include name="releases_01" />
+					<include name="releases_02" />
+				</methods>
+			</class>
+			<class name="com.integrations.testplan.CustomizationIntegrations">
+				<methods>
+					<include name="customizationIntegrations_01" />
+				</methods>
+			</class>
+			<class name="com.integrations.testplan.Jira">
+				<methods>
+					<include name="jira_01" />
+					<include name="jira_02" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete the Release created above">
+		<classes>
+			<class name="com.plutora.testplan.Releases">
+				<methods>
+					<include name="releases_04"/>
+					<include name="releases_08"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Pull a Release from Jira">
+		<classes>
+			<class name="com.integrations.testplan.Jira">
+				<methods>
+					<include name="jira_03" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="PlutoraLogoutTest">
+		<classes>
+			<class name="com.plutora.testplan.Logout" />
+		</classes>
+	</test>
+</suite> <!-- Suite -->
+
